@@ -23,7 +23,7 @@ def download_model(file_id: str, output_path: Path) -> Path:
     return output_path
 
 
-# Drawing of bounding boxes on each frame
+# bounding boxes on each frame
 def process_media(model, source, output_dir, args):
     is_image = isinstance(source, Path) and source.suffix.lower() not in VIDEO_EXTS
     is_webcam = isinstance(source, int)
@@ -36,7 +36,7 @@ def process_media(model, source, output_dir, args):
         frame = draw_bb(frame, predict(str(source)))
         cv.imwrite(str(output_dir / f"{source.stem}_ppe{source.suffix}"), frame)
     
-    # Video processing module - no display
+    # vid process
     elif not is_webcam:
         cap = cv.VideoCapture(str(source))
         fps = cap.get(cv.CAP_PROP_FPS) or 30
@@ -54,7 +54,7 @@ def process_media(model, source, output_dir, args):
         cap.release()
         writer.release()
     
-    # Webcam processing module - with real-time display
+    # Webcam 
     else:
         cap = cv.VideoCapture(source)
         fps = cap.get(cv.CAP_PROP_FPS) or 30
