@@ -2,6 +2,9 @@
 
 A YOLO-based safety detection system that identifies personal protective equipment (PPE) in images and videos.
 
+## Demo
+[![Demo](https://img.youtube.com/vi/V4uHGbsWLwc/maxresdefault.jpg)](https://youtu.be/V4uHGbsWLwc)
+
 ## Features
 
 - Detects helmets and heads images/videos
